@@ -14,10 +14,6 @@ const path = require("path");
 // server used to send send emails
 const app = express();
 
-app.use(express.static('build'));
-app.get('/',(req, res) => {
-  req.sendFile(path.resolve(__dirname,'build','index.html'));
-})
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
